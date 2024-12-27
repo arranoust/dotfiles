@@ -1,0 +1,20 @@
+configuration {
+display-drun: "Search";
+drun-display-format: "{icon} {name}";
+font: "Iosevka FiraCode Medium 10";
+modi: "run,drun,powermenu";
+show-icons: true;
+icon-theme: "Papirus";
+}
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+
+/* Dark theme. */
+@import "~/.cache/wal/colors-rofi-dark"
+
+/* Light theme. */
+@import "~/.cache/wal/colors-rofi-light"
+
+
