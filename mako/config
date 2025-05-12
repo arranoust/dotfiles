@@ -1,0 +1,25 @@
+font=Iosevka 11
+format=<b>%a</b>\n<i>%s</i>\n%b
+sort=-time
+output=DP-2
+layer=overlay
+anchor=top-right
+background-color=#1d242a
+border-color=#646f7b
+width=300
+height=110
+margin=5
+padding=10,15,10
+border-size=2
+border-radius=12
+icons=1
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+
+[urgency=normal]
+border-color=#646f7b
+
+[urgency=high]
+border-color=#3D8286
+default-timeout=0
