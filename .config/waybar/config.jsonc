@@ -1,0 +1,150 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 25,
+  "spacing": 5,
+  "margin-top" :8,
+  "margin-bottom" :0,
+  "margin-right" :10,
+  "margin-left" :10,
+
+  "modules-left": [
+    "hyprland/workspaces",
+  ],
+
+  "modules-center": [
+    "clock#date",
+    "custom/separator",
+    "clock#time",
+  ],
+
+  "modules-right": [
+    "tray",
+    "custom/notification",
+    "pulseaudio",
+    "custom/separator",
+    "custom/wifi",
+    "custom/paddc",
+    "custom/wofi",
+  ],
+
+  "custom/wofi": {
+    "format": "<span color='#fbf1c7' > </span>",
+    "on-click": "sh ~/.config/waybar/scripts/power-menu.sh",
+    "escape" : true,
+    "tooltip" : false
+	},
+
+  // Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "active-only": false,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "persistent-workspaces": {
+        "*": 3
+    }
+  },
+
+    "hyprland/window": {
+    "max-length": 25,
+    "separate-outputs": false
+   },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 8, 
+  },
+
+"custom/separator": {
+  "format": "|"
+},
+
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "<span color='#fbf1c7' >  </span>{volume}%",
+    "format-muted": "<span color='#ea6962' >  </span>{volume}%",
+    "format-bluetooth": "<span color='#fbf1c7' > 󰂰 </span>{volume}%",
+    "format-bluetooth-muted": "<span color='#fbf1c7' > 󰂲 </span>{volume}%",
+    "format-source": "{volume}% ",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "tooltip": false,
+    "max-volume": 130
+  },
+
+  "battery#bat2": {
+    "bat": "BAT2"
+  },
+
+  "battery": {
+    "interval": 1,
+    "states": {
+      "good": 99,
+      "warning": 30,
+      "critical": 20
+    },
+    "format-icons": [" "," "," "," "," "],
+    "format": "<span color='#fbf1c7' > {icon}</span>{capacity}%",
+    "format-critical": "<span color='#fbf1c7' > {icon}</span>{capacity}%",
+    "format-warning": "<span color='#fbf1c7' > {icon}</span>{capacity}%",
+    "format-full": "<span color='#fbf1c7' > {icon}</span>{capacity}%",
+    "format-charging": "<span color='#fbf1c7' > 󰂅 </span>{capacity}%",
+    "format-charging-warning": "<span color='#fbf1c7' > 󰢝 </span>{capacity}%",
+    "format-charging-critical": "<span color='#fbf1c7' > 󰢜 </span>{capacity}%",
+    "format-plugged": "<span color='#fbf1c7' > 󰂅 </span>{capacity}%",
+    "format-alt": "<span color='#fbf1c7' > 󱧥 </span>{time}",
+    "tooltip": false
+  },
+
+  "clock#date": {
+    "format": "<span color='#fbf1c7' >󰃭 </span>{:%a, %d %b}",
+    "tooltip": false,
+  },
+
+  "clock#time": {
+    "format": "<span color='#fbf1c7' >󱑂 </span>{:%I:%M %p}",
+    "tooltip": false,
+    // "tooltip-format": "Standard Time: {:%I:%M %p}",
+    "min-length": 8,
+    "max-length": 12
+  },
+
+  "custom/paddc": {
+    "format": " ",
+    "tooltip": false,
+  },
+
+  "custom/wifi": {
+    "exec": "~/.config/waybar/scripts/wifi-status.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "on-click": "~/.config/waybar/scripts/wifi-menu.sh",
+    "interval": 1,
+    "min-length": 1,
+    "max-length": 12
+  },
+
+  "bluetooth": {
+    "format": "<span color='#458588'>󰂰 </span>",
+    "format-disabled": "<span color='#458588'>󰂲 </span>",
+    "format-connected": "<span color='#458588'>󰂱 </span>",
+    "format-connected-battery": "<span color='#458588'>󰂱 </span>",
+
+    "tooltip-format": 
+      "{num_connections} connected",
+    "tooltip-format-disabled": 
+      "Bluetooth Disabled",
+    "tooltip-format-connected": 
+      "{num_connections} connected\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": 
+      "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": 
+      "{device_alias}: {device_battery_percentage}%",
+
+    "on-click": "~/.config/waybar/scripts/bluetooth-menu.sh",
+    "interval": 1,
+    "min-length": 1,
+    "max-length": 10
+  }
+}

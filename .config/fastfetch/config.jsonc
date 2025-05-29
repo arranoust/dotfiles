@@ -1,0 +1,44 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+ "logo": {
+        "source": "~/Pictures/rei2.jpg",
+	"width": 50,
+        "position": "left",
+        "padding": {
+            "right": 2
+        },
+        "padding": {
+            "top": 1
+        },
+	"padding": {
+            "left": 2
+        }
+    },
+  "modules": [
+    "break",
+    "title",
+    "break",
+    {
+    "type": "custom",
+    "key": "Evangelion",
+    "format": "EPS 25: Do you love me?" 
+    },
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "de",
+    "wm",
+    "wmtheme",
+    "theme",
+    "terminal",
+    "memory",
+    "separator",
+    "break",
+    "colors"
+  ]
+}
