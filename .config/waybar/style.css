@@ -16,9 +16,9 @@
 
 /* the whole window */
 window#waybar {
-  background: @background;
+  background: rgba(29, 36, 42, 0.70);
   color: #fff4d2;
-  padding: 0px 5px;
+  padding: 0px 3px;
   margin: 0;
   border-radius: 10px;
 }
@@ -50,8 +50,6 @@ window#waybar {
   font-size: 14px;
   font-weight: 400;
   color: #202020;
-  background: #202020;
-  border-radius: 2px;
 }
 
 #tray,
@@ -77,51 +75,52 @@ window#waybar {
 /*       workspaces module          */
 /* ================================ */
 #workspaces {
-  margin: 0px;
+  margin: 3px;
 }
 
 #workspaces button {
   color: #fff4d2;
-  background: @background;
-  /* border: 2px solid #fff4d2; */
-  min-width: 25px;
+  background: transparent;
+  min-width: 15px;
   padding: 0 3px;
   margin: 7px 3px;
+  transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
   background: @color7;
   border: 2px solid @color4;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 #workspaces button.visible {
   border: 2px solid @color7;
-  border-radius: 12px;
+  border-radius: 8px;
   background: #3c3835;
 }
 
 #workspaces button.visible:hover {
   border: 2px solid @color7;
-  border-radius: 12px;
+  border-radius: 8px;
   background: #3c3835;
 }
 
 #workspaces button.active {
   border: 2px solid @color7;
-  border-radius: 12px;
+  border-radius: 8px;
   background: @foreground;
+  transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active:hover {
   border: 2px solid @color7;
-  border-radius: 12px;
+  border-radius: 8px;
   background: @foreground;
 }
 
 #workspaces button.urgent {
   border: 2px solid @color4;
-  border-radius: 12px;
+  border-radius: 8px;
   background: @color13;
 }
 
@@ -147,12 +146,10 @@ window#waybar {
 /* ================================ */
 #pulseaudio {
   color: #fbf1c7;
-  background: @background;
 }
 
 #pulseaudio.muted {
   color: #ea6962;
-  background: @background;
 }
 
 /* ================================ */
@@ -177,10 +174,8 @@ window#waybar {
 /* ================================ */
 #clock.time {
   color: #fbf1c7;
-  background: @background;
 }
 
 #clock.date {
   color: #fbf1c7;
-  background: @background;
 }
